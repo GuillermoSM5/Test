@@ -1,0 +1,48 @@
+class Prueba {
+	numTriamgulares(list) {
+		let newNumber = 0;
+		const result = list.map((num, index) => {
+			if (num === 1) {
+				return 1;
+			} else {
+				newNumber === 0
+					? (newNumber = list[index - 1] + num)
+					: (newNumber = newNumber + num);
+				return newNumber;
+			}
+		});
+		return result;
+	}
+	numPrimos(list) {
+		const result = [];
+		list.forEach((num) => {
+			if (num == 1) {
+				return '';
+			} else {
+				for (let i = 2; i < num; i++) {
+					if (num % i == 0) {
+						return;
+					}
+				}
+			}
+			result.push(num);
+		});
+
+		return result;
+	}
+	// fibonacci(list) {
+	// 	let fnumber = 1;
+	// 	const resul = list.map((num, index) => {
+	// 		console.log(`${fnumber} + ${list[index - 1]}`);
+	// 		fnumber = list[index - 1] + fnumber;
+	// 	});
+	// }
+}
+
+const triangular = [
+	1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+];
+const pr = new Prueba();
+console.log(pr.numTriamgulares(triangular));
+console.log(pr.numPrimos(triangular));
+// console.log(pr.fibonacci(triangular));
